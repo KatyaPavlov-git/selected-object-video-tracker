@@ -1,0 +1,20 @@
+{
+  "_comment": "Late-window GT checkpoints for the v8 acceptance test (crosshair-center scenario, click (968,529)). ANCHOR DEFINITION (2026-07-08 re-anchor audit): centroid of the structure's segmented dark component (local Otsu, largest component near the point) — objective and reproducible. Coordinates visually confirmed by the user on 2026-07-08 from rendered comparisons (output/checkpoints/late_gt_compare_read*.png); confirmation scope: coordinates only. The previous transported GT measured 11-47px off-object (read-390 point was 46.8px from the structure centroid — beyond the old tolerance itself) and was replaced; trajectory agreement improved from 8-38px to 2-11px. TOLERANCES (user-adopted rule, 2026-07-08): tol = clamp(1.25 x measured_target_diagonal, 15, 40) px per checkpoint; measured diagonals 32.5/31.2/30.8/35.8/40.8 px. Full-grid rerun PASSED 2026-07-08 under these coordinates + tolerances (V8_FULL_GRID=1: 5 tests OK across all 6 selections).",
+  "video": "videos/v8.mp4",
+  "init_point_xy": [968.0, 529.0],
+  "tolerance_px": 38.5,
+  "tolerances": {
+    "390": 40.0,
+    "410": 39.0,
+    "430": 38.5,
+    "450": 40.0,
+    "470": 40.0
+  },
+  "checkpoints": {
+    "390": [1037, 461],
+    "410": [1015, 443],
+    "430": [1003, 432],
+    "450": [990, 431],
+    "470": [960, 428]
+  }
+}

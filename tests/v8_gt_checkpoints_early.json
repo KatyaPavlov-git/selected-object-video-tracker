@@ -1,0 +1,16 @@
+{
+  "_comment": "Early-return-window GT checkpoints for the v8 acceptance test (HUD-covered selections). ANCHOR DEFINITION (2026-07-08 re-anchor audit): centroid of the structure's segmented dark component (local Otsu, largest component near the point) — an objective, reproducible on-house reference. Coordinates visually confirmed by the user on 2026-07-08 from rendered old-vs-proposed comparisons (output/checkpoints/early_gt_compare_read*.png); confirmation scope: coordinates only. The previous transported-anchor GT carried a measured 13-15px below-left bias and was replaced. TOLERANCES (user-adopted rule, 2026-07-08): tol = clamp(1.25 x measured_target_diagonal, 15, 40) px, per checkpoint; measured diagonals 26.2/21.1/20.6 px. Floor 15 is provisional (no sub-20px-diagonal target measured yet; re-validate at the first external-clip fixture). Full-grid rerun PASSED 2026-07-08 under these coordinates + tolerances (V8_FULL_GRID=1: 5 tests OK across all 6 selections).",
+  "video": "videos/v8.mp4",
+  "tolerance_px": 25.8,
+  "tolerances": {
+    "270": 32.8,
+    "300": 26.4,
+    "330": 25.8
+  },
+  "absence_window_reads": [104, 135],
+  "checkpoints": {
+    "270": [952, 672],
+    "300": [984, 648],
+    "330": [1031, 594]
+  }
+}

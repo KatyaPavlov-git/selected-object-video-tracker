@@ -1,0 +1,19 @@
+# --- raw / generated media — keep only the committed demo recordings ---
+*.mp4
+*.webm
+!demos/
+!demos/*.mp4
+
+# raw input clips + the official sample live locally, never committed
+videos/
+
+# generated outputs
+logs/
+output/
+
+# python / editor / OS cruft
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+.idea/
