@@ -341,7 +341,7 @@ YouTube or private Google Drive URLs) are **not guaranteed**.
 
 ## Future Work
 
-With more time:
+The main directions for future improvement are:
 
 - a **larger, more diverse external validation set**;
 - a **hybrid color/HSV cue** for low-texture but color-distinct targets;
@@ -366,7 +366,7 @@ Legend: ✅ IMPLEMENTED · 🟡 PARTIAL · ❌ MISSING.
 | A6 | Works on any clear object, no restriction | General mechanism (LK on any textured patch); strongest on large / textured / viewpoint-stable targets. Validated on the sample + synthetic scenes + an external human clip; low-texture animals are a documented limitation | 🟡 PARTIAL |
 | A7 | Tested on separate videos | Tested on unseen clips: one external human clip reacquires (PASS-with-caveat); additional dog / low-texture clips are limitation evidence — see [Validation & Evidence](#validation--evidence) | 🟡 PARTIAL |
 | A8 | Python; external libraries allowed | Python 3.9.6 + OpenCV 4.13.0 + NumPy 2.0.2 | ✅ IMPLEMENTED |
-| A9 | Public GitHub with all files | All files committed; repo must be flipped **public** at submission | ❌ PENDING |
+| A9 | Public GitHub with all files | Published on **GitHub** with the clean committed project files | ✅ IMPLEMENTED |
 | A10 | README (GitHub) with app details + versions | This root README | ✅ IMPLEMENTED |
-| A11 | Short demo video | Reference (v8) + external (unseen human clip) screen recordings under `demos/` | 🟡 PARTIAL |
-| A12 | Written summary (6 questions) | [`SUMMARY.md`](SUMMARY.md) — drafted; personal-experience answers to finalize | 🟡 PARTIAL |
+| A11 | Short demo video | Two committed demo screen recordings: [`demos/official_reference_demo.mp4`](demos/official_reference_demo.mp4) (reference v8) and [`demos/external_reacquisition_demo.mp4`](demos/external_reacquisition_demo.mp4) (external unseen human clip) | ✅ IMPLEMENTED |
+| A12 | Written summary (6 questions) | [`SUMMARY.md`](SUMMARY.md) contains the final written answers to all six required questions | ✅ IMPLEMENTED |
