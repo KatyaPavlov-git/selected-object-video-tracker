@@ -354,14 +354,17 @@ The main directions for future improvement are:
 
 ## Assignment Mapping
 
-Legend: ✅ IMPLEMENTED · 🟡 PARTIAL · ❌ MISSING.
+Legend:  
+✅ IMPLEMENTED = requirement is implemented and validated.  
+🟡 PARTIAL = implemented or tested, but with documented limitations or limited validation scope.  
+❌ MISSING / PENDING = not implemented or not completed.
 
 | # | Requirement | Current implementation | Status |
 |---|-------------|------------------------|--------|
 | A1 | Input: video link + pixel on first frame (mouse or manual `[i],[j]`) | Video by local **path or** http/rtsp **URL** ✅ (`--video`, menu/picker); pixel by mouse ✅, `--point x,y` ✅, manual `[i],[j]` row/col ✅ (`--point-rc`). URL playback depends on OpenCV's backend/network (local is the primary tested path) | ✅ IMPLEMENTED |
 | A2 | Track the object selected by the pixel | Lucas–Kanade optical flow (+ optional Kalman) follows the pixel/patch | ✅ IMPLEMENTED |
 | A3 | Display pixel + motion + tracking box; simple UI | Marker + trajectory + moving ROI box + state HUD; mouse & manual selection | ✅ IMPLEMENTED |
-| A4 | Handle loss + reacquire on return | Loss detection ✅ (M8) + dead-feed `FEED_FROZEN` detection ✅ (Commit 4a). Reacquisition ✅ **on by default** (SIFT last-confident + feature + bounded template routes; `--no-reacq` to disable) — validated on the 9-pick sample grid + synthetic exit/return. Documented limitation: near-copy decoys | ✅ IMPLEMENTED |
+| A4 | Handle loss + reacquire on return | Loss detection ✅ (M8) + dead-feed `FEED_FROZEN` detection ✅. Reacquisition ✅ **on by default** (SIFT last-confident + feature + bounded template routes; `--no-reacq` to disable) — validated on the 9-pick sample grid + synthetic exit/return. Documented limitation: near-copy decoys | ✅ IMPLEMENTED |
 | A5 | Real-time ≥30 fps @1920×1080, no GPU | Shipped default (reacquisition on) processing @1080p: **≈4.7 ms/frame mean** on the sample video, search phase ≈24 ms, one 150 ms accept-time re-localization per reacquisition, `FEED_FROZEN` phase ≈0.3 ms; every rolling 1 s window ≥30 processed frames. ≥30 fps input evidenced on the 59.82 fps sample + synthetic ≥30 fps fixtures | ✅ IMPLEMENTED |
 | A6 | Works on any clear object, no restriction | General mechanism (LK on any textured patch); strongest on large / textured / viewpoint-stable targets. Validated on the sample + synthetic scenes + an external human clip; low-texture animals are a documented limitation | 🟡 PARTIAL |
 | A7 | Tested on separate videos | Tested on unseen clips: one external human clip reacquires (PASS-with-caveat); additional dog / low-texture clips are limitation evidence — see [Validation & Evidence](#validation--evidence) | 🟡 PARTIAL |
